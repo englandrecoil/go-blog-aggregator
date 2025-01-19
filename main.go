@@ -13,5 +13,7 @@ func main() {
 		log.Fatal("Error reading configuration")
 	}
 
+	cfg.SetUser("nikitos")
+
 	fmt.Println(cfg)
 }
