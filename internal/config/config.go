@@ -16,7 +16,6 @@ type Config struct {
 
 func (cfg *Config) SetUser(username string) error {
 	cfg.CurrentUserName = username
-
 	return write(cfg)
 }
 
