@@ -1,3 +1,4 @@
 *.exe
 .DS_Store
 *.tmp
+*_test.go
