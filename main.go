@@ -26,7 +26,6 @@ func main() {
 		log.Fatalf("couldn't create connection to db: %s", err)
 	}
 	defer db.Close()
-
 	dbQueries := database.New(db)
 
 	programState := state{
@@ -37,9 +36,10 @@ func main() {
 	commands := commands{
 		registeredCommands: make(map[string]func(*state, command) error),
 	}
-
 	commands.register("login", handlerLogin)
 	commands.register("register", handlerRegister)
+	commands.register("reset", handlerReset)
+	commands.register("users", handlerListUsers)
 
 	args := os.Args
 	if len(args) < 2 {

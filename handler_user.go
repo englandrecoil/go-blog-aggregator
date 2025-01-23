@@ -16,6 +16,10 @@ func handlerLogin(s *state, cmd command) error {
 		return fmt.Errorf("usage: %s <name>", cmd.Name)
 	}
 
+	if cmd.Arguments[0] == s.cfg.CurrentUserName {
+		return fmt.Errorf("user %s is already logged in", cmd.Arguments[0])
+	}
+
 	if _, err := s.db.GetUser(context.Background(), cmd.Arguments[0]); err != nil {
 		return fmt.Errorf("user '%s' doesn't exist", cmd.Arguments[0])
 	}
@@ -62,6 +66,26 @@ func handlerRegister(s *state, cmd command) error {
 	fmt.Println("User registered successfully")
 	printUserInfo(user)
 
+	return nil
+}
+
+func handlerListUsers(s *state, cmd command) error {
+	if len(cmd.Arguments) != 0 {
+		return fmt.Errorf("usage: %s", cmd.Name)
+	}
+
+	users, err := s.db.GetUsers(context.Background())
+	if err != nil {
+		return fmt.Errorf("couldn't get users data: %w", err)
+	}
+
+	for _, value := range users {
+		if value.Name == s.cfg.CurrentUserName {
+			fmt.Printf("* %s (current)\n", s.cfg.CurrentUserName)
+			continue
+		}
+		fmt.Printf("* %s\n", value.Name)
+	}
 	return nil
 }
 
