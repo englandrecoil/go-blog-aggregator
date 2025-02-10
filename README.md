@@ -7,7 +7,7 @@ You'll need **two** things installed to run the program:
 1. Go 1.23 or later ([check official instructions](https://go.dev))
 2. PostgreSQL 16 or later ([check how to install here](https://www.postgresql.org))
 
-Run `go version` and `postgres --version` in your terminal to make sure the installation of Go and PostgreSQL worked.
+Run `go version` and `postgres --version` in your terminal to make sure the installation of Go and PostgreSQL worked
 
 ## :minidisc: Installation
 To use, follow these steps:
@@ -16,7 +16,7 @@ To use, follow these steps:
 3. Create a symlink to make it available system-wide with `sudo ln -s $(pwd)/gator /usr/local/bin/gator`
 
 ## :spiral_notepad: Config
-Create a config file named `config.json` in your home directory with the following content:
+Create a config file named `.gatorconfig.json` in your home directory with the following content:
 ```json
 {
   "db_url": "postgres://username:@localhost:5432/database?sslmode=disable"
@@ -28,7 +28,7 @@ Make sure to replace the values _username, password, database_ with your databas
 ## :keyboard: Usage
 After installation, you can run gator from any directory. Simply use `gator <command> [args...]` in terminal. But first you need to:
 
-Create a new User:
+Create a new user:
 ```bash
 gator register <name>
 ```
