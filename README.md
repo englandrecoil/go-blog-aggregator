@@ -1,4 +1,6 @@
 # go-blog-aggregator
+[![en](https://img.shields.io/badge/lang-en-green?style=flat)](https://github.com/englandrecoil/go-blog-aggregator/blob/master/README.md)
+[![ru](https://img.shields.io/badge/lang-ru-blue?style=flat)](https://github.com/englandrecoil/go-blog-aggregator/blob/master/README.ru.md)
 
 **Gator CLI** lets you add RSS feeds from across the internet, store posts in a PostgreSQL database, follow and unfollow from the other user's RSS feeds and view summaries of aggregated posts in terminal.
 
