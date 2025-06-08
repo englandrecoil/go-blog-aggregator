@@ -1,4 +1,5 @@
 # go-blog-aggregator
+[![en](https://img.shields.io/badge/lang-en-green?style=flat)](https://github.com/englandrecoil/go-blog-aggregator/blob/master/README.md)
 
 **Gator CLI** позволяет добавлять RSS-ленты со всего интернета, сохранять посты в базу данных PostgreSQL, подписываться и отписываться от лент других пользователей, а также просматривать сводки агрегированных постов прямо в терминале.
 
